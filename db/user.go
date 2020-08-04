@@ -1,0 +1,20 @@
+package db
+
+import (
+	"fmt"
+
+	"github.com/dhruv0711/Oauth/types"
+)
+
+func User(id int) (types.User, error) {
+	var userDetails []types.User
+
+	fetchDetailsQuery := `SELECT id, name, email, meta FROM loggedinuser WHERE id = $1`
+	err := db.Select(&userDetails, fetchDetailsQuery, id)
+	if err != nil {
+		fmt.Println(err)
+		return types.User{}, err
+	}
+
+	return userDetails[0], nil
+}
