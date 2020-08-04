@@ -15,6 +15,10 @@ func User(id int) (types.User, error) {
 		fmt.Println(err)
 		return types.User{}, err
 	}
+	if len(userDetails) > 0 {
+		return userDetails[0], nil
+	}
 
-	return userDetails[0], nil
+	return types.User{}, nil
+
 }
