@@ -15,7 +15,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8084/users/all/dhruv",
+					"raw": "http://localhost:8084/users/search?value=93",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -23,8 +23,13 @@
 					"port": "8084",
 					"path": [
 						"users",
-						"all",
-						"dhruv"
+						"search"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "93"
+						}
 					]
 				}
 			},

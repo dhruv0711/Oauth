@@ -8,8 +8,11 @@ import (
 )
 
 func Search(c *gin.Context) {
-	email := c.Param("search")
-	resp, err := db.Search(email)
+	search := c.Request.URL.Query().Get("value")
+	if search == "" {
+		return
+	}
+	resp, err := db.Search(search)
 	if err != nil {
 		fmt.Println(err)
 		return

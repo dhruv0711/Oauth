@@ -13,7 +13,7 @@ func main() {
 	r.GET("/linkedinhome", api.Linkedinhome)
 	r.GET("/user/:id", api.User)
 	r.GET("/users/all", api.Allusers)
-	r.GET("/users/all/:search", api.Search)
+	r.GET("/users/search", api.Search)
 
 	r.Run(":8084")
 }
