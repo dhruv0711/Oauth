@@ -7,7 +7,9 @@ import (
 
 func main() {
 	r := gin.Default()
-	r.LoadHTMLGlob("templates/*")
+	r.StaticFile("/images/github.png", "./html/images/github.png")
+	r.StaticFile("/images/linkedin.png", "./html/images/linkedin.png")
+	r.LoadHTMLGlob("html/login.html")
 	r.GET("/login", api.Login)
 	r.GET("/githubhome", api.Githubhome)
 	r.GET("/linkedinhome", api.Linkedinhome)
